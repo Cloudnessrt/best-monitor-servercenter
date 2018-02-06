@@ -1,7 +1,7 @@
-package com.futurn.serviceconsume_1.Controller;
+package com.tomorrow.consumerclient.Controller;
 
-import com.futurn.serviceconsume_1.Service.IHelloService;
-import com.futurn.serviceconsume_1.VO.User;
+import com.tomorrow.consumerclient.VO.User;
+import com.tomorrow.consumerclient.Service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
