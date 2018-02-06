@@ -1,4 +1,4 @@
-package com.futurn.serviceprovide_1.VO;
+package com.tomorrow.serviceprovide.VO;
 
 public class User {
     private String name;
