@@ -1,35 +1,27 @@
 package com.tomorrow.serviceprovide.Entity;
 
-import com.tomorrow.serviceprovide.Common.UserSexEnum;
+import com.tomorrow.serviceprovide.Entity.Common.BaseEntity;
 
 import java.io.Serializable;
 
-public class UserEntity implements Serializable {
+public class UserEntity extends BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Long id;
+
 	private String userName;
 	private String passWord;
-	private UserSexEnum userSex;
+	private Integer userSex;
 	private String nickName;
 
 	public UserEntity() {
 		super();
 	}
 
-	public UserEntity(String userName, String passWord, UserSexEnum userSex) {
+	public UserEntity(String userName, String passWord, Integer userSex) {
 		super();
 		this.passWord = passWord;
 		this.userName = userName;
 		this.userSex = userSex;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUserName() {
@@ -48,11 +40,11 @@ public class UserEntity implements Serializable {
 		this.passWord = passWord;
 	}
 
-	public UserSexEnum getUserSex() {
+	public Integer getUserSex() {
 		return userSex;
 	}
 
-	public void setUserSex(UserSexEnum userSex) {
+	public void setUserSex(Integer userSex) {
 		this.userSex = userSex;
 	}
 
@@ -62,12 +54,6 @@ public class UserEntity implements Serializable {
 
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
-	}
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "userName " + this.userName + ", pasword " + this.passWord + "sex " + userSex.name();
 	}
 
 }

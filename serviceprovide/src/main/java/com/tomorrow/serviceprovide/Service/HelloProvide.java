@@ -1,7 +1,7 @@
 package com.tomorrow.serviceprovide.Service;
 
 import com.tomorrow.serviceprovide.Entity.UserEntity;
-import com.tomorrow.serviceprovide.Mapper.Common.UserMapper;
+import com.tomorrow.serviceprovide.Dao.Mapper.Common.UserMapper;
 import com.tomorrow.serviceprovide.VO.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
