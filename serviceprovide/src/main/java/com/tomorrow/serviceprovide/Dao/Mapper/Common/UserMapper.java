@@ -1,17 +1,16 @@
 package com.tomorrow.serviceprovide.Dao.Mapper.Common;
 
+import com.github.pagehelper.Page;
 import com.tomorrow.serviceprovide.Entity.UserEntity;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import java.util.List;
-
 public interface UserMapper {
 	
 	@Select("SELECT * FROM users")
-	List<UserEntity> getAll();
+	Page<UserEntity> getAll();
 	
 	@Select("SELECT * FROM users WHERE id = #{id}")
 	UserEntity getOne(Long id);

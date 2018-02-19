@@ -1,14 +1,15 @@
 package com.tomorrow.serviceprovide.Controller;
 
+import com.github.pagehelper.Page;
 import com.tomorrow.serviceprovide.Common.Enum.impl.SexEnum;
-import com.tomorrow.serviceprovide.Entity.UserEntity;
 import com.tomorrow.serviceprovide.Dao.Mapper.Common.UserMapper;
+import com.tomorrow.serviceprovide.Entity.UserEntity;
+import com.tomorrow.serviceprovide.Service.IUserEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,10 @@ public class UserController {
 	
 	@Autowired
 	private UserMapper userMapper;
-	
+
+    @Autowired
+    private IUserEntityService iUserEntityService;
+
 	@RequestMapping("/getUsers")
 	public List<UserEntity> getUsers() {
 		List<UserEntity> users=userMapper.getAll();
@@ -33,6 +37,8 @@ public class UserController {
     public void save(UserEntity user) {
         UserEntity a=  new UserEntity("aa", "a123456", SexEnum.MAN.getKey());
         userMapper.insertEntity(a);
+
+        iUserEntityService.getList(1,1,a);
     }
     
     @RequestMapping(value="update")

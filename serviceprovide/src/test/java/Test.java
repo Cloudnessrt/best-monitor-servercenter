@@ -1,8 +1,10 @@
 import com.tomorrow.serviceprovide.Common.Enum.impl.ValidEnum;
 import com.tomorrow.serviceprovide.Common.Function.EnumUtil;
+import com.tomorrow.serviceprovide.Service.IUserEntityService;
 import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Map;
 
@@ -12,10 +14,12 @@ import java.util.Map;
  * @AUTHOR TCH
  * @CREATE 2018-02-14
  **/
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class Test {
 
+    @Autowired
+    private IUserEntityService iuserEntityService;
 
     @org.junit.Test
     public void testMethod(){
