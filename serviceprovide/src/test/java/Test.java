@@ -1,10 +1,9 @@
 import com.tomorrow.serviceprovide.Common.Enum.impl.ValidEnum;
 import com.tomorrow.serviceprovide.Common.Function.EnumUtil;
-import com.tomorrow.serviceprovide.Service.IUserEntityService;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Map;
 
@@ -14,12 +13,9 @@ import java.util.Map;
  * @AUTHOR TCH
  * @CREATE 2018-02-14
  **/
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration
 public class Test {
-
-    @Autowired
-    private IUserEntityService iuserEntityService;
 
     @org.junit.Test
     public void testMethod(){
@@ -34,5 +30,8 @@ public class Test {
 
     }
 
-
+    @Scheduled(cron="0 0/1 * * * ?") //每分钟执行一次
+    public void statusCheck() {
+        System.out.println("1");
+    }
 }
