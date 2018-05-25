@@ -1,6 +1,5 @@
 package com.tomorrow.serviceprovide.Controller;
 
-import com.github.pagehelper.Page;
 import com.tomorrow.serviceprovide.Common.Enum.impl.SexEnum;
 import com.tomorrow.serviceprovide.Dao.Mapper.Common.UserMapper;
 import com.tomorrow.serviceprovide.Entity.UserEntity;
@@ -19,7 +18,7 @@ public class UserController {
 	private UserMapper userMapper;
 
     @Autowired
-    private IUserEntityService iUserEntityService;
+    private IUserEntityService userEntityService;
 
 	@RequestMapping("/getUsers")
 	public List<UserEntity> getUsers() {
@@ -38,7 +37,7 @@ public class UserController {
         UserEntity a=  new UserEntity("aa", "a123456", SexEnum.MAN.getKey());
         userMapper.insertEntity(a);
 
-        iUserEntityService.getList(1,1,a);
+        userEntityService.getList(1,1,a);
     }
     
     @RequestMapping(value="update")

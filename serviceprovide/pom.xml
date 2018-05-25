@@ -54,7 +54,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-
 		<!--mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -73,17 +72,19 @@
 			<version>1.1.1</version>
 		</dependency>
 
-		<!-- email -->
+		<!--redis-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
+			<artifactId>spring-boot-starter-redis</artifactId>
 		</dependency>
 
-		<!-- freemarker 模版 -->
+		<!--jedis-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-freemarker</artifactId>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
 		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>

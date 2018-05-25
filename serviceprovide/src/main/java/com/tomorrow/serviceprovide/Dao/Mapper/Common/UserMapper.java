@@ -16,7 +16,7 @@ public interface UserMapper {
 	UserEntity getOne(Long id);
 
 	@Insert("INSERT INTO users(id,userName,passWord,userSex,nickName,createDate,createUser,createUserName,lastChangeDate,lastChangeUser,lastChangeUserName) " +
-			"VALUES(#{id},#{userName}, #{passWord}, #{userSex},#{nickName},#{createDate},#{createUser},#{createUserName},#{lastChangeDate},#{lastChangeUser},#{lastChangeUserName})")
+			"VALUES(#{id},#{account}, #{MD5}, #{name},#{creditNum},#{sexEnum},#{birthday},#{companyId},#{createDate},#{createUser},#{createUserName},#{lastChangeDate},#{lastChangeUser},#{lastChangeUserName})")
 	void insertEntity(UserEntity user);
 
 	@Update("UPDATE users SET userName=#{userName},nick_name=#{nickName} WHERE id =#{id}")
